@@ -1,0 +1,4 @@
+# Install rip grep for serching through the files
+
+$ winget install BurntSushi.ripgrep.MSVC # Windows
+$ sudo apt-get install ripgrep # Linux

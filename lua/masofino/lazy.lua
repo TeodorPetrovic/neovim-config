@@ -11,7 +11,7 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-require("lazy").setup("masofino.plugins", {
+require("lazy").setup({{ import = "masofino.plugins" }, { import = "masofino.plugins.lsp"} }, {
     checker = {
         enabled = true,
         notify = false,

@@ -10,3 +10,8 @@ $ sudo apt-get install ripgrep # Linux
 
 # For installing FZF for telescope and need Cmake
 winget install fzf
+
+# TODO 
+
+SPACE + ca To recomend code actions
+SPACE + rn TO rename multiple options in my code

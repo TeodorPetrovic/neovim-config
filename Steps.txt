@@ -3,7 +3,10 @@
 $ winget install BurntSushi.ripgrep.MSVC # Windows
 $ sudo apt-get install ripgrep # Linux
 
-# Must have a MinGW 64bin
+# Must have a MinGW 64binj
+# Installed WinGup something for make
+
+# Installed npm tree-sitter
 
 # For installing FZF for telescope and need Cmake
 winget install fzf

@@ -3,10 +3,28 @@ return {
 	branch = "0.1.x",
 	dependencies = {
 		"nvim-lua/plenary.nvim",
-		-- { "nvim-telescope/telescope-fzf-native.nvim", build = "make" }, --Linux
 		{
 			"nvim-telescope/telescope-fzf-native.nvim",
-			build = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build",
+			build = function()
+				-- Detect operating system
+				local os = vim.loop.os_uname().sysname
+
+				-- Windows specific setup
+				if os == "Windows_NT" then
+					local cmake_cmd = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release -G "Visual Studio 16 2019" -A x64'
+					local build_cmd = "cmake --build build --config Release"
+					local install_cmd = "cmake --install build --prefix build"
+
+					os.execute(cmake_cmd)
+					os.execute(build_cmd)
+					os.execute(install_cmd)
+				else
+					-- Linux or macOS specific setup
+					os.execute("cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release")
+					os.execute("cmake --build build --config Release")
+					os.execute("cmake --install build --prefix build")
+				end
+			end,
 		},
 		"nvim-tree/nvim-web-devicons",
 		"folke/todo-comments.nvim",

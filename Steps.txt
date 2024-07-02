@@ -7,11 +7,11 @@ $ sudo apt-get install ripgrep # Linux
 # Installed WinGup something for make
 
 # Installed npm tree-sitter
+npm install tree-sitter
 
 # For installing FZF for telescope and need Cmake
 winget install fzf
 
-# TODO 
-
+# TODO
 SPACE + ca To recomend code actions
 SPACE + rn TO rename multiple options in my code

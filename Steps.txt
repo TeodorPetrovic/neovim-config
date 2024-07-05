@@ -11,6 +11,7 @@ npm install tree-sitter
 
 # For installing FZF for telescope and need Cmake
 winget install fzf
+winget install ajeetdsouza.zoxide
 
 # TODO
 SPACE + ca To recomend code actions

@@ -17,3 +17,11 @@ keymap.set("n", "<leader>tx", "<cmd>tabclose<CR>", { desc = "Close current tab" 
 keymap.set("n", "<leader>tn", "<cmd>tabn<CR>", { desc = "Go to next tab" }) --  go to next tab
 keymap.set("n", "<leader>tp", "<cmd>tabp<CR>", { desc = "Go to previous tab" }) --  go to previous tab
 keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Open current buffer in new tab" }) --  move current buffer to new tab
+
+-- Terminal
+keymap.set("n", "<leader>tt", ":tabnew | terminal<CR>A", { desc = "Run terminal in new tab" }) --  move current buffer to new tab
+
+-- Rest
+keymap.set("n", "<leader>rr", "<cmd>lua require('rest-nvim').run()<CR>", { noremap = true, silent = true })
+keymap.set("n", "<leader>rp", "<cmd>lua require('rest-nvim').run(true)<CR>", { noremap = true, silent = true })
+keymap.set("n", "<leader>rl", "<cmd>lua require('rest-nvim').last()<CR>", { noremap = true, silent = true })

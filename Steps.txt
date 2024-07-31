@@ -13,6 +13,8 @@ npm install tree-sitter
 winget install fzf
 winget install ajeetdsouza.zoxide
 
+# Must install x server on windows X
+
 # TODO
 SPACE + ca To recomend code actions
 SPACE + rn TO rename multiple options in my code

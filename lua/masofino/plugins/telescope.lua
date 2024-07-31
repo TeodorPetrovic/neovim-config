@@ -9,20 +9,28 @@ return {
 				-- Detect operating system
 				local os = vim.loop.os_uname().sysname
 
+				-- Function to execute commands
+				local function execute_cmd(cmd)
+					local result = vim.fn.system(cmd)
+					if vim.v.shell_error ~= 0 then
+						error("Command failed: " .. cmd .. "\nError: " .. result)
+					end
+				end
+
 				-- Windows specific setup
 				if os == "Windows_NT" then
-					local cmake_cmd = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release -G "Visual Studio 16 2019" -A x64'
+					local cmake_cmd = 'cmake -S . -B build -DCMAKE_BUILD_TYPE=Release -G "Visual Studio 16 2019" -A x64'
 					local build_cmd = "cmake --build build --config Release"
 					local install_cmd = "cmake --install build --prefix build"
 
-					os.execute(cmake_cmd)
-					os.execute(build_cmd)
-					os.execute(install_cmd)
+					execute_cmd(cmake_cmd)
+					execute_cmd(build_cmd)
+					execute_cmd(install_cmd)
 				else
 					-- Linux or macOS specific setup
-					os.execute("cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release")
-					os.execute("cmake --build build --config Release")
-					os.execute("cmake --install build --prefix build")
+					execute_cmd("cmake -S . -B build -DCMAKE_BUILD_TYPE=Release")
+					execute_cmd("cmake --build build --config Release")
+					execute_cmd("cmake --install build --prefix build")
 				end
 			end,
 		},

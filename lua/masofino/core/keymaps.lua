@@ -20,6 +20,9 @@ keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Open current buffer
 
 -- Terminal
 keymap.set("n", "<leader>tt", ":tabnew | terminal<CR>A", { desc = "Run terminal in new tab" }) --  move current buffer to new tab
+keymap.set("n", "<leader>tv", ":vsplit | terminal<CR>A", { desc = "Run terminal in vertical split" }) --  move current buffer to new tab
+keymap.set("n", "<leader>ts", ":split | terminal<CR>A", { desc = "Run terminal in horizontal split" }) --  move current buffer to new tab
+keymap.set("t", "<Esc>", "<C-\\><C-n>", { desc = "Escape terminal mode" })
 
 -- Rest
 keymap.set("n", "<leader>rr", "<cmd>lua require('rest-nvim').run()<CR>", { noremap = true, silent = true })

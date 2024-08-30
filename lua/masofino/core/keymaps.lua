@@ -28,3 +28,7 @@ keymap.set("t", "<Esc>", "<C-\\><C-n>", { desc = "Escape terminal mode" })
 keymap.set("n", "<leader>rr", "<cmd>lua require('rest-nvim').run()<CR>", { noremap = true, silent = true })
 keymap.set("n", "<leader>rp", "<cmd>lua require('rest-nvim').run(true)<CR>", { noremap = true, silent = true })
 keymap.set("n", "<leader>rl", "<cmd>lua require('rest-nvim').last()<CR>", { noremap = true, silent = true })
+
+-- Moving text
+keymap.set("v", "J", ":m '>+1<CR>gv=gv", { noremap = true, silent = true })
+keymap.set("v", "K", ":m '<-2<CR>gv=gv", { noremap = true, silent = true })

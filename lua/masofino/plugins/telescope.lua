@@ -28,9 +28,7 @@ return {
 					execute_cmd(install_cmd)
 				else
 					-- Linux or macOS specific setup
-					execute_cmd("cmake -S . -B build -DCMAKE_BUILD_TYPE=Release")
-					execute_cmd("cmake --build build --config Release")
-					execute_cmd("cmake --install build --prefix build")
+					execute_cmd("make")
 				end
 			end,
 		},

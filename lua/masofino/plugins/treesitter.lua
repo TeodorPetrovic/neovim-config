@@ -43,7 +43,6 @@ return {
 				"query",
 				"vimdoc",
 				"c",
-				"php",
 				"java",
 				"vue",
 				"go",

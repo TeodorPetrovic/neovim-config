@@ -57,6 +57,7 @@ sudo -E bash nodesource_setup.sh
 sudo apt-get install -y nodejs
 sudo npm -g install tree-sitter-cli
 sudo npm -g install neovim
+npm config set bin-links true
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install
 

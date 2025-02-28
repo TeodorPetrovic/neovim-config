@@ -32,3 +32,6 @@ opt.clipboard = "unnamedplus"
 -- Split Windows
 opt.splitright = true -- split vertical windows to the right
 opt.splitbelow = true -- split vertical windows to the left
+
+-- Set Session
+opt.sessionoptions:append("localoptions")

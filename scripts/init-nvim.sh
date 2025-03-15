@@ -28,7 +28,7 @@ sudo apt-get update
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin -y
 sudo groupadd docker
 sudo usermod -aG docker $USER
-newgrp docker
+#newgrp docker
 
 # 3. Redis
 sudo apt-get install lsb-release curl gpg -y
@@ -72,7 +72,7 @@ if [ -d $NVIM_LOCAL ]; then
   rm -rf $NVIM_LOCAL
 fi
 if [ -d $NVIM_CACHE ]; then
-  rm -rf $NVIM_LOCAL
+  rm -rf $NVIM_CACHE
 fi
 
 if [ -d $NVIM_CONFIG ]; then

@@ -32,3 +32,12 @@ keymap.set("n", "<leader>rl", "<cmd>lua require('rest-nvim').last()<CR>", { nore
 -- Moving text
 keymap.set("v", "J", ":m '>+1<CR>gv=gv", { noremap = true, silent = true })
 keymap.set("v", "K", ":m '<-2<CR>gv=gv", { noremap = true, silent = true })
+
+-- Rest (New Mappings based on the image)
+keymap.set("n", "<leader>ro", "<cmd>Rest open<cr>", { desc = "Open Result Pane" })
+keymap.set("n", "<leader>rr", "<cmd>Rest run<cr>", { desc = "Run Request" })
+keymap.set("n", "<leader>rl", "<cmd>Rest last<cr>", { desc = "Run Last Request" })
+keymap.set("n", "<leader>rs", "<cmd>Rest logs<cr>", { desc = "Edit Logs File" })
+keymap.set("n", "<leader>rc", "<cmd>Rest cookies<cr>", { desc = "Edit Cookies File" })
+keymap.set("n", "<leader>re", "<cmd>Rest env show<cr>", { desc = "Show Env File" })
+keymap.set("n", "<leader>rv", "<cmd>Rest env select<cr>", { desc = "Select Env File" })

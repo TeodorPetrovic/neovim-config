@@ -29,6 +29,20 @@ opt.backspace = "indent,eol,start"
 -- Clipboard
 opt.clipboard = "unnamedplus"
 
+-- Clipboard provider configuration (for Linux with xsel)
+vim.g.clipboard = {
+	name = "xsel",
+	copy = {
+		["+"] = "xsel --clipboard --input",
+		["*"] = "xsel --input",
+	},
+	paste = {
+		["+"] = "xsel --clipboard --output",
+		["*"] = "xsel --output",
+	},
+	cache_enabled = 1,
+}
+
 -- Split Windows
 opt.splitright = true -- split vertical windows to the right
 opt.splitbelow = true -- split vertical windows to the left

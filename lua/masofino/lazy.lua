@@ -1,5 +1,5 @@
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-if not vim.loop.fs_stat(lazypath) then
+if not vim.uv.fs_stat(lazypath) then
 	vim.fn.system({
 		"git",
 		"clone",
@@ -20,17 +20,3 @@ require("lazy").setup({ { import = "masofino.plugins" }, { import = "masofino.pl
 		notify = false,
 	},
 })
-
-vim.opt.clipboard:append("unnamedplus")
-vim.g.clipboard = {
-	name = "xsel",
-	copy = {
-		["+"] = "xsel --clipboard --input",
-		["*"] = "xsel --input",
-	},
-	paste = {
-		["+"] = "xsel --clipboard --output",
-		["*"] = "xsel --output",
-	},
-	cache_enabled = 1,
-}

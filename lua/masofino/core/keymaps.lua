@@ -24,16 +24,11 @@ keymap.set("n", "<leader>tv", ":vsplit | terminal<CR>A", { desc = "Run terminal 
 keymap.set("n", "<leader>ts", ":split | terminal<CR>A", { desc = "Run terminal in horizontal split" }) --  move current buffer to new tab
 keymap.set("t", "<Esc>", "<C-\\><C-n>", { desc = "Escape terminal mode" })
 
--- Rest
-keymap.set("n", "<leader>rr", "<cmd>lua require('rest-nvim').run()<CR>", { noremap = true, silent = true })
-keymap.set("n", "<leader>rp", "<cmd>lua require('rest-nvim').run(true)<CR>", { noremap = true, silent = true })
-keymap.set("n", "<leader>rl", "<cmd>lua require('rest-nvim').last()<CR>", { noremap = true, silent = true })
-
 -- Moving text
 keymap.set("v", "J", ":m '>+1<CR>gv=gv", { noremap = true, silent = true })
 keymap.set("v", "K", ":m '<-2<CR>gv=gv", { noremap = true, silent = true })
 
--- Rest (New Mappings based on the image)
+-- Rest HTTP client keymaps
 keymap.set("n", "<leader>ro", "<cmd>Rest open<cr>", { desc = "Open Result Pane" })
 keymap.set("n", "<leader>rr", "<cmd>Rest run<cr>", { desc = "Run Request" })
 keymap.set("n", "<leader>rl", "<cmd>Rest last<cr>", { desc = "Run Last Request" })

@@ -80,11 +80,13 @@ return {
     end
 
     -- Default config for all servers (Neovim 0.11+ approach)
+    -- The "*" wildcard applies capabilities to all servers automatically
     vim.lsp.config("*", {
       capabilities = capabilities,
     })
 
     -- Server-specific configurations using vim.lsp.config (Neovim 0.11+)
+    -- These configs are merged with the default "*" config above (capabilities included)
     -- configure svelte server
     vim.lsp.config("svelte", {
       on_attach = function(client, bufnr)

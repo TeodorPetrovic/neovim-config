@@ -55,12 +55,12 @@ return {
 
         opts.desc = "Go to previous diagnostic"
         keymap.set("n", "[d", function()
-          vim.diagnostic.jump({ count = -1, float = true })
+          vim.diagnostic.jump({ count = -1 })
         end, opts) -- jump to previous diagnostic in buffer
 
         opts.desc = "Go to next diagnostic"
         keymap.set("n", "]d", function()
-          vim.diagnostic.jump({ count = 1, float = true })
+          vim.diagnostic.jump({ count = 1 })
         end, opts) -- jump to next diagnostic in buffer
 
         opts.desc = "Show documentation for what is under cursor"

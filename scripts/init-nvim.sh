@@ -16,8 +16,12 @@ git config user.name "Teodor Petrovic"
 git config user.email "teodor.z.petrovic@gmail.com"
 curl -fsSL https://bun.sh/install | bash
 
-# 2. Install docker
-for pkg in docker.io docker-doc docker-compose docker-compose-v2 podman-docker containerd runc; do sudo apt-get remove -y "$pkg" || true; done
+# 2. Install docker (remove existing packages if present)
+for pkg in docker.io docker-doc docker-compose docker-compose-v2 podman-docker containerd runc; do
+    if dpkg -l | grep -q "^ii  $pkg "; then
+        sudo apt-get remove -y "$pkg"
+    fi
+done
 
 # Add Docker's official GPG key:
 sudo apt-get update
@@ -69,7 +73,7 @@ npm config set bin-links true
 # 7. FZF
 if [ ! -d ~/.fzf ]; then
   git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-  ~/.fzf/install --all
+  ~/.fzf/install --key-bindings --completion --update-rc --no-bash --no-zsh --no-fish
 else
   echo "ℹ️ FZF already installed, skipping..."
 fi
